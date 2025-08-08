@@ -1,16 +1,10 @@
-# todoapp
+Basic ToDo app with local data storage
 
-A new Flutter project.
+![Screenshot_2025-08-08-15-10-21-090_com example todoapp](https://github.com/user-attachments/assets/05f76c59-f75d-450a-b6da-a50c12852eaa)
+![Screenshot_2025-08-08-15-10-16-410_com example todoapp](https://github.com/user-attachments/assets/0f7ef29d-034d-492e-8912-499daa949d8a)
+![Screenshot_2025-08-08-15-10-10-037_com example todoapp](https://github.com/user-attachments/assets/e6ba0162-6ae5-420a-bbd9-89ad32070437)
+![Screenshot_2025-08-08-15-10-05-264_com example todoapp](https://github.com/user-attachments/assets/7e4a9ece-8834-481d-a82a-1c0a68714cd5)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tutorial by Mitch Koko
+If you wanna watch: https://youtu.be/mMgr47QBZWA?si=L-LpjWgSiNT74e6o
