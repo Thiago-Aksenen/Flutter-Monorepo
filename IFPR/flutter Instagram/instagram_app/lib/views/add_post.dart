@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_app/models/post.dart';
 
 class AddPost extends StatefulWidget {
-  const AddPost({super.key});
+  final Post? post;
+  const AddPost({super.key, this.post});
 
   @override
   State<AddPost> createState() => _AddPostState();
@@ -13,15 +15,19 @@ class _AddPostState extends State<AddPost> {
   final TextEditingController _textController = TextEditingController();
 
   @override
-  void dispose() {
-  _titleController.dispose();
-  _textController.dispose();
-  super.dispose();
-}
+  void initState() {
+    super.initState();
+    if (widget.post != null) {
+      _titleController.text = widget.post!.title;
+      _textController.text = widget.post!.text;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Novo Post"),
+        title: widget.post == null ? Text("Novo Post") : Text("Editando Post"),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -37,20 +43,22 @@ class _AddPostState extends State<AddPost> {
             children: [
               //form para title
               TextFormField(
+                decoration: InputDecoration(hint: Text("Digite seu título")),
                 controller: _titleController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Entre com seu post';
+                    return 'Entre com seu titulo';
                   }
                   return null;
                 },
               ),
               //form para text
               TextFormField(
+                decoration: InputDecoration(hint: Text("Digite seu texto")),
                 controller: _textController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Entre com seu post';
+                    return 'Entre com seu texto';
                   }
                   return null;
                 },
@@ -61,10 +69,18 @@ class _AddPostState extends State<AddPost> {
                     ScaffoldMessenger.of(
                       context,
                     ).showSnackBar(const SnackBar(content: Text('Salvando')));
-                    Navigator.pop(context, [
-                      _titleController.text,
-                      _textController.text,
-                    ]);
+
+                    if (widget.post == null) {
+                      Post newPost = Post(
+                        title: _titleController.text,
+                        text: _textController.text,
+                      );
+                      Navigator.pop(context, newPost);
+                    } else {
+                      widget.post?.title = _titleController.text;
+                      widget.post?.text = _textController.text;
+                      Navigator.pop(context);
+                    }
                   }
                 },
                 child: const Text("Salvar"),

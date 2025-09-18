@@ -12,11 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Post> _posts = [
+  final List<Post> _posts = [
     Post(title: "Titulo 1", text: "Texto exemplo 1", liked: false),
     Post(title: "Titulo 2", text: "Texto exemplo 2", liked: false),
   ];
   final List _storys = ['story 1', 'story 2', 'story 3'];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -27,17 +28,13 @@ class _HomePageState extends State<HomePage> {
           );
           if (result != null) {
             setState(() {
-              _posts.add(Post(title: result[0], text: result[1]));
+              _posts.add(result);
             });
           }
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddPost()),
-          );
         },
         child: const Icon(Icons.add),
       ),
-      appBar: AppBar(title: const Text("Instagram Style App")),
+      appBar: AppBar(title: Center(child: const Text("Instagram Style App"))),
       body: Column(
         children: [
           SizedBox(
@@ -65,6 +62,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     });
                   },
+                  deleteItem: ()=> deletePost(_posts.length - index - 1),
                 );
               },
             ),
@@ -72,5 +70,11 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+  
+  deletePost(int index) {
+    setState(() {
+      _posts.remove(index);
+    });
   }
 }
