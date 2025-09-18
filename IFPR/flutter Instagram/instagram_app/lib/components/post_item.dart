@@ -4,8 +4,7 @@ import 'package:instagram_app/views/add_post.dart';
 
 class PostItem extends StatelessWidget {
   final Post post;
-  final VoidCallback
-  onLike; //é uma função que você passa pro PostItem pra ele chamar quando o ícone for clicado.
+  final VoidCallback onLike; //é uma função que você passa pro PostItem pra ele chamar quando o ícone for clicado.
   final Function() deleteItem;
   const PostItem({
     super.key,

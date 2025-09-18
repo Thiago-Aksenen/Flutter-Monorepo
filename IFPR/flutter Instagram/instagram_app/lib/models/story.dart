@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class story{
-String titulo;
-Icon 
+class Story {
+  String title;
+  IconData icon;
+
+  Story({required this.title, required this.icon});
 }
