@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logical_exercises/component/tile_exercise.dart';
 import 'package:logical_exercises/exercicios/exercicio1.dart';
 import 'package:logical_exercises/exercicios/exercicio2.dart';
+import 'package:logical_exercises/exercicios/exercicio3.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,6 +26,13 @@ class _HomePageState extends State<HomePage> {
       texto:
           "Usuário digita um número num TextField. Mostre na tela se é par ou ímpar.",
       exercicioBuilder: (context) => Exercicio2(),
+    ),
+    TileExercise(
+      numero: 3,
+      titulo: "Lista de tarefas (mini to-do)",
+      texto:
+          "Usuário digita uma tarefa num campo.Ao clicar em \"Adicionar\", aparece na lista embaixo. Só exibir mesmo, sem excluir ainda.",
+      exercicioBuilder: (context) => Exercicio3(),
     ),
   ];
 
