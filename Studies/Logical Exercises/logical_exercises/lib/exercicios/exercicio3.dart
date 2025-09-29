@@ -10,7 +10,12 @@ class Exercicio3 extends StatefulWidget {
 
 class _Exercicio3State extends State<Exercicio3> {
   TextEditingController textController = TextEditingController();
-  String? titulo;
+  List<TileTodo> lista = [
+    TileTodo(titulo: "Lembrete 1"),
+    TileTodo(titulo: "Lembrete 2"),
+    TileTodo(titulo: "Lembrete 3"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +32,7 @@ class _Exercicio3State extends State<Exercicio3> {
               actions: [
                 TextButton(
                   onPressed: () {
+                    textController.clear();
                     Navigator.pop(context);
                   },
                   child: Text("Cancelar"),
@@ -34,7 +40,7 @@ class _Exercicio3State extends State<Exercicio3> {
                 TextButton(
                   onPressed: () {
                     setState(() {
-                      titulo = textController.text;
+                      lista.add(TileTodo(titulo: textController.text));
                     });
                     Navigator.pop(context);
                   },
@@ -60,23 +66,12 @@ class _Exercicio3State extends State<Exercicio3> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            titulo != null && titulo!.isNotEmpty
-                ? Text(titulo!)
-                : SizedBox.shrink(),
-
-            // Envolva o ListView.builder com Expanded
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: ListView.builder(
-                  itemBuilder: (context, index) => TileTodo(titulo: "titulo"),
-                  itemCount: 10,
-                ),
-              ),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: ListView.builder(
+            itemBuilder: (context, index) => lista[index],
+            itemCount: lista.length,
+          ),
         ),
       ),
     );
