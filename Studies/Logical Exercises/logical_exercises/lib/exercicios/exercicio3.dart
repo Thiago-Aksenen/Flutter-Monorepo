@@ -71,6 +71,7 @@ class _Exercicio3State extends State<Exercicio3> {
           child: ListView.builder(
             itemBuilder: (context, index) => lista[index],
             itemCount: lista.length,
+            
           ),
         ),
       ),
