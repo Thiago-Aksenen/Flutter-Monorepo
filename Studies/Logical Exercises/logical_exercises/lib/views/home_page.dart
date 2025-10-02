@@ -3,6 +3,8 @@ import 'package:logical_exercises/component/tile_exercise.dart';
 import 'package:logical_exercises/exercicios/exercicio1.dart';
 import 'package:logical_exercises/exercicios/exercicio2.dart';
 import 'package:logical_exercises/exercicios/exercicio3.dart';
+import 'package:logical_exercises/exercicios/exercicio4.dart';
+import 'package:logical_exercises/exercicios/exercicio5.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,6 +35,21 @@ class _HomePageState extends State<HomePage> {
       texto:
           "Usuário digita uma tarefa num campo.Ao clicar em \"Adicionar\", aparece na lista embaixo. Só exibir mesmo, sem excluir ainda.",
       exercicioBuilder: (context) => Exercicio3(),
+    ),
+    TileExercise(
+      numero: 4,
+      titulo: "Sorteio de número",
+      texto:
+          "Botão \"Sortear\" que gera um número aleatório entre 1 e 100. Mostre esse número na tela.",
+      exercicioBuilder: (context) => Exercicio4(),
+    ),
+
+    TileExercise(
+      numero: 5,
+      titulo: "Tabuada",
+      texto:
+          "Usuário digita um número.Ao clicar em \"Gerar\", aparece a tabuada desse número (1x até 10x).",
+      exercicioBuilder: (context) => Exercicio5(),
     ),
   ];
 
