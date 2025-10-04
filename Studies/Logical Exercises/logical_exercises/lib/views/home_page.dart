@@ -8,6 +8,7 @@ import 'package:logical_exercises/exercicios/exercicio5.dart';
 import 'package:logical_exercises/exercicios/exercicio6.dart';
 import 'package:logical_exercises/exercicios/exercicio7.dart';
 import 'package:logical_exercises/exercicios/exercicio8.dart';
+import 'package:logical_exercises/exercicios/exercicio9.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -77,6 +78,14 @@ class _HomePageState extends State<HomePage> {
       texto:
           "Crie uma lista na tela mostrando todos os números ímpares de 1 a 20.",
       exercicioBuilder: (p0) => Exercicio8(),
+    ),
+
+    TileExercise(
+      numero: 9,
+      titulo: "Botão contador duplo.",
+      texto:
+          "Dois botões, um soma de 2 em 2, outro soma de 5 em 5. Mostre o resultado na tela.",
+      exercicioBuilder: (p0) => Exercicio9(),
     ),
   ];
 
