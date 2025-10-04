@@ -7,6 +7,7 @@ import 'package:logical_exercises/exercicios/exercicio4.dart';
 import 'package:logical_exercises/exercicios/exercicio5.dart';
 import 'package:logical_exercises/exercicios/exercicio6.dart';
 import 'package:logical_exercises/exercicios/exercicio7.dart';
+import 'package:logical_exercises/exercicios/exercicio8.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -62,7 +63,21 @@ class _HomePageState extends State<HomePage> {
       exercicioBuilder: (context) => Exercicio6(),
     ),
 
-    TileExercise(numero: 7, titulo: "Verificador de palíndromo", texto: "Usuário digita uma palavra. App diz se a palavra é um palíndromo (ex: \"arara\", \"ovo\").", exercicioBuilder: (p0) => Exercicio7(),)
+    TileExercise(
+      numero: 7,
+      titulo: "Verificador de palíndromo",
+      texto:
+          "Usuário digita uma palavra. App diz se a palavra é um palíndromo (ex: \"arara\", \"ovo\").",
+      exercicioBuilder: (p0) => Exercicio7(),
+    ),
+
+    TileExercise(
+      numero: 8,
+      titulo: "Lista de números ímpares",
+      texto:
+          "Crie uma lista na tela mostrando todos os números ímpares de 1 a 20.",
+      exercicioBuilder: (p0) => Exercicio8(),
+    ),
   ];
 
   @override
