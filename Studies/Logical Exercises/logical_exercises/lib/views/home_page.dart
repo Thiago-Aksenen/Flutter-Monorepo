@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logical_exercises/component/tile_exercise.dart';
 import 'package:logical_exercises/exercicios/exercicio1.dart';
+import 'package:logical_exercises/exercicios/exercicio10.dart';
 import 'package:logical_exercises/exercicios/exercicio2.dart';
 import 'package:logical_exercises/exercicios/exercicio3.dart';
 import 'package:logical_exercises/exercicios/exercicio4.dart';
@@ -87,6 +88,8 @@ class _HomePageState extends State<HomePage> {
           "Dois botões, um soma de 2 em 2, outro soma de 5 em 5. Mostre o resultado na tela.",
       exercicioBuilder: (p0) => Exercicio9(),
     ),
+
+    TileExercise(numero: 10, titulo: "Reversor de texto", texto: "Usuário digita uma frase. App mostra a frase ao contrário.", exercicioBuilder: (p0) => Exercicio10(),)
   ];
 
   @override
