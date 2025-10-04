@@ -5,6 +5,8 @@ import 'package:logical_exercises/exercicios/exercicio2.dart';
 import 'package:logical_exercises/exercicios/exercicio3.dart';
 import 'package:logical_exercises/exercicios/exercicio4.dart';
 import 'package:logical_exercises/exercicios/exercicio5.dart';
+import 'package:logical_exercises/exercicios/exercicio6.dart';
+import 'package:logical_exercises/exercicios/exercicio7.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -51,6 +53,16 @@ class _HomePageState extends State<HomePage> {
           "Usuário digita um número.Ao clicar em \"Gerar\", aparece a tabuada desse número (1x até 10x).",
       exercicioBuilder: (context) => Exercicio5(),
     ),
+
+    TileExercise(
+      numero: 6,
+      titulo: "Troca de cor",
+      texto:
+          "Botão que, ao ser clicado, muda a cor de fundo da tela para uma cor aleatória.",
+      exercicioBuilder: (context) => Exercicio6(),
+    ),
+
+    TileExercise(numero: 7, titulo: "Verificador de palíndromo", texto: "Usuário digita uma palavra. App diz se a palavra é um palíndromo (ex: \"arara\", \"ovo\").", exercicioBuilder: (p0) => Exercicio7(),)
   ];
 
   @override
